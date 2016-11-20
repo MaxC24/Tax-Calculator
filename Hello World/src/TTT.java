@@ -12,16 +12,29 @@ public class TTT {
 				board[i][j] = '_';
 			}
 		}
+		Play();
 	}
 	
 	public static void Play() {
 		boolean playing = true;
 		while(playing) {
+			PrintBoard();
+			System.out.println("Player " + turn + " moves");
 			row = scan.nextInt() - 1;
 			col = scan.nextInt() - 1;
-			board[row][col] = turn;
+			if(board[row][col] == '_' && row <= 2 && row >= 0 &&
+				col <= 2 && col >= 0) {
+				board[row][col] = turn;
+			}
+			else {
+				System.out.println("Position wrong, try again");
+				continue; 
+			}
 			
-			
+			if(GameOver(row, col)) {
+				System.out.println(turn + " player won the game" );
+				playing = false;
+			}
 			if(turn == 'X') turn = 'O';
 			else turn = 'X';
 		}
@@ -38,7 +51,7 @@ public class TTT {
 		System.out.println();
 	}
 	
-	public boolean GameOver(int rMove, int cMove){
+	public static boolean GameOver(int rMove, int cMove){
 		// Check perpendicular:
 		if(board[0][cMove] == board[1][cMove] && 
 		   board[0][cMove] == board[2][cMove]) {
