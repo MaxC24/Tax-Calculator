@@ -1,11 +1,13 @@
 package com.sales.models;
 
+import com.sales.utils.Helper;
+
 public class Item {
 	
 	private int quantity;
 	private String name = "";
 	private double price;
-	private boolean imported;
+	private boolean imported, nonTaxable;
 	
 	public Item(String str) {
 		//create arrays to help the string parsing
@@ -15,14 +17,11 @@ public class Item {
 		nameAndAmount = itemArr[0].split(" ");
 		
 		// assign values to the properties.
+		this.nonTaxable = Helper.isTaxable(itemArr[0]);
 		this.quantity = Integer.parseInt(nameAndAmount[0]);
 		this.price = Double.parseDouble(itemArr[1]);
 		this.imported = nameAndAmount[1] == "imported";
-
-		for(int i = 1; i < nameAndAmount.length; i++) {
-			this.name += " " + nameAndAmount[i];
-			this.name = this.name.trim();
-		}
+		this.name = Helper.fixName(nameAndAmount);
 	}
 
 	public String getName(){
@@ -40,8 +39,9 @@ public class Item {
 	
 	public double getTax() {
 		int percentage;
-		percentage = this.imported ? 15 : 10;
-		return price*quantity*percentage/100;
+		percentage = imported ? (nonTaxable ? 5 : 15) : (nonTaxable ? 0 : 10);
+		return Helper.taxRound(price*quantity*percentage/100);
+//		return price*quantity*percentage/100;
 	}
 	
 	public double getPrice() {

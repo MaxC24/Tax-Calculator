@@ -22,7 +22,7 @@ public class Cart {
 		for(int i = 0; i < items.size(); i++ ){
 			System.out.println(items.get(i).getQuantity() + " " + items.get(i).getName() + ": " + items.get(i).getPrice());
 		}
-		System.out.println("Sale Taxes: " + totalTax);
-		System.out.println("Total: " + (totalPrice + totalTax));
+		System.out.println("Sale Taxes: " + String.format("%.2f",totalTax));
+		System.out.println("Total: " + String.format("%.2f", (totalPrice + totalTax)));
 	}
 }
