@@ -18,9 +18,10 @@ public class Item {
 		
 		// assign values to the properties.
 		this.nonTaxable = Helper.isTaxable(itemArr[0]);
+		this.imported = Helper.isImported(itemArr[0]);
 		this.quantity = Integer.parseInt(nameAndAmount[0]);
-		this.price = Double.parseDouble(itemArr[1]);
-		this.imported = nameAndAmount[1] == "imported";
+		this.price = Double.parseDouble(itemArr[1]) + getTax();
+		
 		this.name = Helper.fixName(nameAndAmount);
 	}
 
@@ -41,7 +42,6 @@ public class Item {
 		int percentage;
 		percentage = imported ? (nonTaxable ? 5 : 15) : (nonTaxable ? 0 : 10);
 		return Helper.taxRound(price*quantity*percentage/100);
-//		return price*quantity*percentage/100;
 	}
 	
 	public double getPrice() {

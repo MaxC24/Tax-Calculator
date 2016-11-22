@@ -20,7 +20,7 @@ public class Cart {
 	
 	public void checkOut() {
 		for(int i = 0; i < items.size(); i++ ){
-			System.out.println(items.get(i).getQuantity() + " " + items.get(i).getName() + ": " + items.get(i).getPrice());
+			System.out.println(items.get(i).getQuantity() + " " + items.get(i).getName() + ": " + String.format("%.2f", items.get(i).getPrice() + items.get(i).getTax()));
 		}
 		System.out.println("Sale Taxes: " + String.format("%.2f",totalTax));
 		System.out.println("Total: " + String.format("%.2f", (totalPrice + totalTax)));

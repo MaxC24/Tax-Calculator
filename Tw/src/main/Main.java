@@ -21,7 +21,8 @@ public class Main {
 		theCart = new Cart();
 		
 		//open the first input file and create a Scanner that will go through each item in the list.
-		inputOne = new File("/Users/Sushi24/my-projects/JAVA/Tw/resources/input1.txt");
+		inputOne = new File("/Users/Sushi24/my-projects/JAVA/Tw/resources/input2.txt");
+
 		scan = new Scanner(inputOne);
 		
 		// instantiate the currentItem to the first item in the list.

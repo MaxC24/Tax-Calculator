@@ -12,6 +12,10 @@ public class Helper {
 		return name.trim();
 	}
 	
+	public static boolean isImported(String name) {
+		return name.matches("(.*)imported(.*)");
+	}
+	
 	public static boolean isTaxable(String name) {
 		 for(String mat: matchers) {
 			 if(name.matches(mat)) {
@@ -31,7 +35,6 @@ public class Helper {
 		} else if(mod > 0.025) {
 			tax += (0.05 - mod);
 		}
-		
 		return tax;
 	}
 }
