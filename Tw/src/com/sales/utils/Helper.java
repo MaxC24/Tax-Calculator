@@ -28,13 +28,10 @@ public class Helper {
 	public static double taxRound(double tax) {
 		double mod = tax % 0.05;
 		
-		if(mod == 0) return tax;
-		
-		if(mod <= 0.025) {
-			tax -= mod;
-		} else if(mod > 0.025) {
+		if(mod > 0) {
 			tax += (0.05 - mod);
 		}
+		
 		return tax;
 	}
 }

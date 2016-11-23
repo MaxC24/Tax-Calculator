@@ -20,8 +20,7 @@ public class Item {
 		this.nonTaxable = Helper.isTaxable(itemArr[0]);
 		this.imported = Helper.isImported(itemArr[0]);
 		this.quantity = Integer.parseInt(nameAndAmount[0]);
-		this.price = Double.parseDouble(itemArr[1]) + getTax();
-		
+		this.price = Double.parseDouble(itemArr[1]);
 		this.name = Helper.fixName(nameAndAmount);
 	}
 
@@ -45,6 +44,7 @@ public class Item {
 	}
 	
 	public double getPrice() {
-	    return price*quantity;
+//		System.out.println("price: " + price + " quantity: " + quantity + " tax: " + getTax());
+	    return price*quantity + getTax();
 	}
 }
