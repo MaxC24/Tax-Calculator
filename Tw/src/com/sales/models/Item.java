@@ -44,7 +44,6 @@ public class Item {
 	}
 	
 	public double getPrice() {
-//		System.out.println("price: " + price + " quantity: " + quantity + " tax: " + getTax());
 	    return price*quantity + getTax();
 	}
 }
