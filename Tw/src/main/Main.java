@@ -16,7 +16,7 @@ public class Main {
 	public static String currentLine;
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		//loop through the input files.
+		//loop through the input*.txt files.
 		for(int i = 1 ; i < 4 ; i++) {
 			// create a cart that will checkout and print the receipt.
 			theCart = new Cart();

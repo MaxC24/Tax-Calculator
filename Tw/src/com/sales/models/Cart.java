@@ -2,6 +2,8 @@ package com.sales.models;
 
 import java.util.ArrayList;
 
+import com.sales.utils.Helper;
+
 public class Cart {
 	
 	private ArrayList<Item> items;
@@ -19,10 +21,12 @@ public class Cart {
 	}
 	
 	public void checkOut() {
+		Item it;
 		for(int i = 0; i < items.size(); i++ ){
-			System.out.println(items.get(i).getQuantity() + " " + items.get(i).getName() + ": " + String.format("%.2f", items.get(i).getPrice()));
+			it = items.get(i);
+			System.out.println(it.getQuantity() + " " + it.getName() + ": " + Helper.format(it.getPrice()));
 		}
-		System.out.println("Sale Taxes: " + String.format("%.2f",totalTax));
-		System.out.println("Total: " + String.format("%.2f", totalPrice));
+		System.out.println("Sale Taxes: " + Helper.format(totalTax));
+		System.out.println("Total: " + Helper.format(totalPrice));
 	}
 }

@@ -28,7 +28,6 @@ public class Item {
 		return name;
 	}
 	
-	
 	public boolean isImported() {
 		return imported;
 	}

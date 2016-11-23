@@ -26,13 +26,11 @@ public class Helper {
 	}
 	
 	public static double taxRound(double tax) {
-		double mod = tax % 0.05;
-		
-		if(mod > 0) {
-			tax += (0.05 - mod);
-		}
-		
-		return tax;
+		return tax % 0.05 > 0 ? tax += (0.05 - tax % 0.05) : tax;
+	}
+	
+	public static String format(double num) {
+		return String.format("%.2f", num);
 	}
 }
 
