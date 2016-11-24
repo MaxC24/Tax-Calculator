@@ -2,10 +2,11 @@
 
 To execute the program. Run the Class Main in the main package.
 It will print out the result in the console.
+Tw is the working folder.
 
-Note:
-I never coded in Java before, and I don't have knowledge of best practices.
-I used Eclipse as IDE for the challenge.
+I didn't write many comments as the logic is very simple. I apologize as I haven't coded in Java before, so I didn't really follow the best practices, but I did my best for the time I had.
+
+Thank you.
 
 ##Problem Description.
  
