@@ -1,3 +1,8 @@
+/*
+ * The Item class instantiates the item objects by parsing the lines in the
+ * input text files in the resources folder.
+ */
+
 package com.sales.models;
 
 import com.sales.utils.Helper;
@@ -12,7 +17,6 @@ public class Item {
 	public Item(String str) {
 		//create arrays to help the string parsing
 		String[] itemArr, nameAndAmount;
-		
 		itemArr = str.split(" at ");
 		nameAndAmount = itemArr[0].split(" ");
 		

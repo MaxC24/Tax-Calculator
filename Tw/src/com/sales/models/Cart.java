@@ -1,3 +1,9 @@
+/*
+ * The Cart contains an ArrayList of Item instances.
+ * it keeps track of the Total Price of all the items and the total tax.
+ * It has a checkout method that prints the receipt out in the console.
+ */
+
 package com.sales.models;
 
 import java.util.ArrayList;

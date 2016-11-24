@@ -9,7 +9,7 @@ import com.sales.models.Item;
 
 public class Main {
 	
-	public static File inputOne;
+	public static File input;
 	public static Scanner scan;
 	public static Cart theCart;
 	public static Item currentItem;
@@ -22,9 +22,9 @@ public class Main {
 			theCart = new Cart();
 			
 			//open the first input file and create a Scanner that will go through each item in the list.
-			inputOne = new File("/Users/Sushi24/my-projects/JAVA/Tw/resources/input" + i + ".txt");
+			input = new File("/Users/Sushi24/my-projects/JAVA/Tw/resources/input" + i + ".txt");
 	
-			scan = new Scanner(inputOne);
+			scan = new Scanner(input);
 			
 			// instantiate the currentItem to the first item in the list.
 			currentLine = scan.nextLine();

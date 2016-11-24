@@ -1,3 +1,8 @@
+/*
+ * The Helper class is a utility that helps the other classes 
+ * to implement some of the logic, for separation of concerns.
+ */
+
 package com.sales.utils;
 
 public class Helper {
